@@ -1,0 +1,15 @@
+<br>
+<div id="search-component" class="mx-auto max-w-md">
+  <div class="flex items-center">
+    <label for="search-box" class="mr-4 text-gray-600">Character Search</label>
+    <input class="bg-gray-200 px-3 py-2 rounded-md w-full md:w-auto" #searchBox id="search-box" (input)="search(searchBox.value)"/>
+  </div>
+
+  <ul class="search-result">
+    <li *ngFor="let hero of heroesRecogidos">
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>

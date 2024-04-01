@@ -1,0 +1,23 @@
+<div class="container mx-auto px-4">
+  <h2 class="text-2xl font-bold mb-4">Characters</h2>
+
+  <ul class="heroes grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <li *ngFor="let hero of heroesList" class="bg-white rounded-lg shadow-md overflow-hidden">
+      <a routerLink="/detail/{{hero.id}}" class="block p-4 hover:bg-gray-100">
+        <span class="badge inline-block bg-gray-600 text-white rounded-full px-2 py-1 mr-2">{{hero.id}}</span>
+        <span>{{hero.name}}</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="mt-8">
+    <mat-paginator
+      [length]="total"
+      [pageSize]="20"
+      (page)="pageEvent = $event; onPaginateChange($event)"
+      aria-label="Select page"
+      class="bg-white rounded-lg shadow-md overflow-hidden"
+    >
+    </mat-paginator>
+  </div>
+</div>
